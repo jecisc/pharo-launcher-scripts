@@ -24,5 +24,15 @@ StartupPreferencesLoader default executeAtomicItems: {
 	^ text asMorph lock'
 
 		]
-		runOnce: true
+		runOnce: true.
+
+	StartupAction
+		name: 'Update default sorting'
+		code: [ 
+			PhLImagesPresenter compile: 'initialize
+	super initialize.
+	imageTable sortingBlock: #name ascending'
+
+		]
+		runOnce: true.
 }
