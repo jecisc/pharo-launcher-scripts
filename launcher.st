@@ -35,4 +35,22 @@ StartupPreferencesLoader default executeAtomicItems: {
 
 		]
 		runOnce: true.
+
+	StartupAction
+		name: 'Reduce description height'
+		code: [ 
+			PhLImagesPresenter class compile: 'defaultSpec
+
+	^ SpBoxLayout newVertical
+		add: #imageFilter expand: false;
+		add: (SpPanedLayout newVertical
+			position: 82 percent;
+			add: #imageTable;
+			add: #descriptionPanel;
+			yourself);
+		yourself'
+
+		]
+		runOnce: true.
+
 }
